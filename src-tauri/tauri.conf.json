@@ -1,0 +1,99 @@
+{
+  "build": {
+    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
+    "devPath": "http://localhost:8080",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "Edit Media",
+    "version": "0.0.0"
+  },
+  "plugins": {
+    "fs": {
+      "scope": [
+        "$VIDEO/**/*",
+        "$CACHE/**/*",
+        "$RESOURCE/*"
+      ]
+    },
+    "shell": {
+      "scope": [
+        {
+          "args": true,
+          "cmd": "",
+          "name": "bin/ffmpeg/ffmpeg",
+          "sidecar": true
+        },
+        {
+          "args": true,
+          "cmd": "",
+          "name": "bin/ffprobe/ffprobe",
+          "sidecar": true
+        },
+        {
+          "args": true,
+          "cmd": "",
+          "name": "bin/ytdlp/ytdlp",
+          "sidecar": true
+        }
+      ]
+    },
+    "http": {
+      "scope": [
+        "https://google.com/search?*",
+        "https://youtube.com/*",
+        "https://www.youtube.com/*",
+        "https://video.twimg.com/*",
+        "https://*.fbcdn.net/*",
+        "http://ipc.localhost/*"
+      ]
+    }
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "category": "Video",
+      "resources": [
+        "resources/Arial.ttf"
+      ],
+      "externalBin": [
+        "bin/ffmpeg/ffmpeg",
+        "bin/ffprobe/ffprobe",
+        "bin/ytdlp/ytdlp"
+      ],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.editmedia.editmedia",
+      "targets": "all",
+      "appimage": {
+        "bundleMediaFramework": true
+      }
+    },
+    "macOSPrivateApi": true,
+    "security": {
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["*/**"]
+      }
+    },
+    "windows": [
+      {
+        "decorations": true,
+        "fileDropEnabled": true,
+        "fullscreen": false,
+        "height": 1000,
+        "resizable": true,
+        "title": "Edit Media",
+        "transparent": true,
+        "width": 1000
+      }
+    ]
+  }
+}

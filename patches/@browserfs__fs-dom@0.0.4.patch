@@ -1,0 +1,20 @@
+diff --git a/package.json b/package.json
+index 2b3d872bae073a0e59bcc492943c3c508ba1b2b7..8b3a6c5f6db5b48685acc2381018d5d8ee610b5e 100644
+--- a/package.json
++++ b/package.json
+@@ -24,6 +24,7 @@
+ 		"node": ">= 18"
+ 	},
+ 	"exports": {
++		".": "./dist/index.js",
+ 		"./*": "./dist/*"
+ 	},
+ 	"typesVersions": {
+@@ -51,6 +52,6 @@
+ 		"typescript": "5.2.2"
+ 	},
+ 	"dependencies": {
+-		"@browserfs/core": "^0.0.11"
++		"@browserfs/core": "^0.0.12"
+ 	}
+ }

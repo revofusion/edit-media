@@ -1,0 +1,52 @@
+[package]
+name = "edit-media"
+version = "0.0.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-alpha.11", features = ["codegen"] }
+
+[dependencies]
+tauri = { version = "2.0.0-alpha.17", features = [ "protocol-asset", "macos-private-api"] }
+serde = { version = "1.0", features = ["derive"] }
+tauri-plugin-fs = { version ="2.0.0-alpha.4", features = ["watch"] }
+tauri-plugin-dialog = "2.0.0-alpha.4"
+tauri-plugin-window = "2.0.0-alpha.2"
+tauri-plugin-http = "2.0.0-alpha.5"
+tauri-plugin-store = "2.0.0-alpha.4"
+tauri-plugin-persisted-scope = "2.0.0-alpha.4"
+tauri-plugin-window-state = "2.0.0-alpha.4"
+tauri-plugin-shell = "2.0.0-alpha.4"
+tauri-plugin-os = "2.0.0-alpha.4"
+
+subprocess = "0.2.9"
+serde_json = "1.0"
+anyhow = "1.0.66"
+window-vibrancy = "0.3.1"
+num_cpus = "1.13.1"
+sysinfo = "0.26.7"
+ffmpeg-sidecar = "0.5.1"
+
+[dependencies.openssl]
+optional = true
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
+
+# If compiling on a system without OpenSSL installed, or cross-compiling for a different
+# architecture, enable this feature to compile OpenSSL as part of the build.
+# See https://docs.rs/openssl/#vendored for more.
+static_ssl = ['openssl/vendored']
+
+[lib]
+name = "api_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
