@@ -32,13 +32,14 @@ Introducing Edit Media, a convenient tool for video and audio utilities. Visit u
 
 ## Advanced Edit Mode:
 
-https://github.com/revofusion/edit-media/assets/138184593/33ded925-a5ea-4324-bb34-1ed785e5d534
+https://github.com/revofusion/edit-media/assets/138184593/42ce2809-0f5c-43c5-9963-70b295af258c
+
 
 ## AI Edit:
 
-https://github.com/revofusion/edit-media/assets/138184593/5035e9a7-886c-4f46-aeec-ac4b8a0ffa95
+https://github.com/revofusion/edit-media/assets/138184593/dc88d32e-711b-4c4a-8b6a-51ae155e4fcc
 
 ## Video Downloader:
 
-https://github.com/revofusion/edit-media/assets/138184593/debe1067-838c-48dd-8ffd-1ed9dbf36c01
+https://github.com/revofusion/edit-media/assets/138184593/b1e82453-1a0a-4aff-a352-5bd1d29bcde9
 
